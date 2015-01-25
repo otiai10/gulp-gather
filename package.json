@@ -1,0 +1,26 @@
+{
+    "name": "gulp-micro-template",
+    "description": "gulp plugin for `micro-template` by John Resig",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/otiai10/gulp-micro-template"
+    },
+    "version": "0.0.1",
+    "dependencies": {
+        "through2": "*"
+    },
+    "devDependencies": {
+        "coffee-script": "*",
+        "jshint-stylish": "*",
+        "gulp": "*",
+        "gulp-jshint": "*",
+        "gulp-util": "*",
+        "require": "*",
+        "testem": "*",
+        "mocha": "*",
+        "chai": "*"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/mocha"
+    }
+}
