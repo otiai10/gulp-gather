@@ -1,9 +1,9 @@
 {
-    "name": "gulp-micro-template",
+    "name": "gulp-micro-templates",
     "description": "gulp plugin for `micro-template` by John Resig",
     "repository": {
         "type": "git",
-        "url": "https://github.com/otiai10/gulp-micro-template"
+        "url": "https://github.com/otiai10/gulp-micro-templates"
     },
     "version": "0.0.1",
     "dependencies": {
