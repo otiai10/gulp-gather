@@ -3,8 +3,6 @@ var plugin = require('../');
 // tests
 require('mocha');
 var chai = require('chai').should();
-
-// var defineModule = require('gulp-define-module');
 var gutil = require('gulp-util');
 var fs = require('fs');
 var path = require('path');
@@ -20,17 +18,10 @@ var fixture = function(filePath) {
 };
 
 describe('gulp-micro-template', function() {
-    describe('foo', function() {
-        it('should be true', function () {
-            var stream = plugin();
+    describe('plugin', function() {
+        it('should compile html file as key-value static pool', function () {
+            var stream = plugin('compiled.js', {namespace: 'MyTemplates'});
             var tpl = fixture("001.html");
-
-            plugin.foo().should.be.true;
-
-            stream.on('data', function(dest) {
-
-            });
-
             stream.write(tpl);
             stream.end();
         });

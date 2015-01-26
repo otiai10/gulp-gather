@@ -1,27 +1,35 @@
-var through2 = require('through2');
+var through2  = require('through2'),
+    fs        = require('fs'),
+    gutil     = require('gulp-util'),
+    // errored   = gutil.PluginError,
+    // PKG_NAME  = 'gulp-micro-template',
+    NAMESPACE = 'MicroTemplates';
 
-// const _NAME = 'gulp-micro-template';
-var _NAME = 'gulp-micro-template';
-
-module.exports = function(opts) {
-    console.log(opts);
-    for (var i in opts) {
-        console.log("hoge");
-        console.log(i, typeof opts[i]);
-        console.log("fuga");
+module.exports = function(fileName, opts) {
+    opts = opts || {};
+    var pool = {},
+        firstFile;
+    function transform(file, enc, callback) {
+        var err;
+        var templateName = file.path.replace(file.cwd + '/', '');
+        pool[templateName] = file.contents.toString();
+        if (!firstFile) firstFile = file;
+        callback(err);
     }
-    var cache = cache || {};
-    // define process for each file
-    var th2 = through2.obj(function(file, enc, callback) {
-        // pass this file if it's null
-        if (file.isNull()) {
-            return callback(null, file);
-        }
-        callback(null, file);
-    });
-    return th2;
-};
+    function flush(callback) {
+        var err,
+            namespace = opts.namespace || NAMESPACE,
+            contents = 'this.'+namespace+'='+JSON.stringify(pool)+';';
 
-module.exports.foo = function() {
-    return true;
+        var output = new gutil.File({
+            cwd:  firstFile.cwd,
+            base: firstFile.base,
+            path: firstFile.base + fileName
+        });
+        output.contents = new Buffer(contents);
+        this.push(output);
+
+        callback(err);
+    }
+    return through2.obj(transform, flush);
 };
