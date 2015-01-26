@@ -22,6 +22,6 @@
         "chai": "*"
     },
     "scripts": {
-        "test": "./node_modules/.bin/mocha"
+        "test": "gulp; ./node_modules/.bin/mocha"
     }
 }
