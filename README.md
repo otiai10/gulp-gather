@@ -1,7 +1,7 @@
-gulp-micro-template
+gulp-micro-templates
 ===================
 
-[![Build Status](https://travis-ci.org/otiai10/gulp-micro-template.svg?branch=master)](https://travis-ci.org/otiai10/gulp-micro-template)
+[![Build Status](https://travis-ci.org/otiai10/gulp-micro-templates.svg?branch=master)](https://travis-ci.org/otiai10/gulp-micro-templates)
 
 Respecting [micro-templating](http://ejohn.org/blog/javascript-micro-templating/)
 
@@ -12,7 +12,7 @@ Respecting [micro-templating](http://ejohn.org/blog/javascript-micro-templating/
 
 # spec
 
-Make soruce files (.html)
+Concat these `.html` fiels ...
 
 ```html
 <!-- ./tpl/foo.html -->
@@ -26,7 +26,7 @@ Make soruce files (.html)
 <% } %>
 ```
 
-to 
+To static pool like below
 
 ```javascript
 this.MicroTemplates = {
@@ -36,15 +36,16 @@ this.MicroTemplates = {
 <% } %>"
 };
 ```
+
 # usage
 
 gulpfile.js
 
 ```javascript
-var microtemplate = require('gulp-micro-template');
+var microtemplates = require('gulp-micro-templates');
 gulp.task('microt',function(){
     gulp.src('./tpl/**/*.html')
-    .pipe(microtemplate('all.js'))
+    .pipe(microtemplates('all.js'))
     .pipe(gulp.dest('./build/tpl'));
 });
 ```
