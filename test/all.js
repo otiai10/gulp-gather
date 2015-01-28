@@ -17,7 +17,7 @@ var fixture = function(filePath) {
     });
 };
 
-describe('gulp-micro-template', function() {
+describe('gulp-gather', function() {
     describe('plugin', function() {
         it('should compile html file as key-value static pool', function () {
             var stream = plugin('compiled.js', {namespace: 'MyTemplates'});

@@ -1,9 +1,9 @@
 {
-    "name": "gulp-micro-templates",
-    "description": "gulp plugin for `micro-template` by John Resig",
+    "name": "gulp-gather",
+    "description": "gulp plugin to gather templates of `micro-template` by John Resig",
     "repository": {
         "type": "git",
-        "url": "https://github.com/otiai10/gulp-micro-templates"
+        "url": "https://github.com/otiai10/gulp-gather"
     },
     "version": "0.0.1",
     "dependencies": {
@@ -15,7 +15,6 @@
         "gulp": "*",
         "gulp-jshint": "*",
         "gulp-util": "*",
-        "require": "*",
         "testem": "*",
         "mocha": "*",
         "chai": "*"

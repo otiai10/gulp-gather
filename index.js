@@ -1,8 +1,6 @@
 var through2  = require('through2'),
     fs        = require('fs'),
     gutil     = require('gulp-util'),
-    // errored   = gutil.PluginError,
-    // PKG_NAME  = 'gulp-micro-template',
     NAMESPACE = 'MicroTemplates';
 
 module.exports = function(fileName, opts) {

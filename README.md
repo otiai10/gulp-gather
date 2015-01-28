@@ -1,7 +1,7 @@
-gulp-micro-templates
+gulp-gather
 ===================
 
-[![Build Status](https://travis-ci.org/otiai10/gulp-micro-templates.svg?branch=master)](https://travis-ci.org/otiai10/gulp-micro-templates)
+[![Build Status](https://travis-ci.org/otiai10/gulp-gather.svg?branch=master)](https://travis-ci.org/otiai10/gulp-gather)
 
 Respecting [micro-templating](http://ejohn.org/blog/javascript-micro-templating/)
 
