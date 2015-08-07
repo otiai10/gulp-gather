@@ -9,7 +9,7 @@ module.exports = function(fileName, opts) {
         firstFile;
     function transform(file, enc, callback) {
         var err;
-        var templateName = file.path.replace(file.cwd + '/', '');
+        var templateName = file.path.replace(file.cwd + '/', '').split('/').pop();
         pool[templateName] = file.contents.toString();
         if (!firstFile) firstFile = file;
         callback(err);
